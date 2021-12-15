@@ -26,7 +26,7 @@ class ContactRequest extends FormRequest
     {
         return [
             'name' => 'required|min:6|max:190',
-            'contact' => 'required|integer|digits:9',
+            'contact' => ['required', 'integer', 'digits:9', Rule::unique('contacts')->ignore(optional($this->route('contact'))->id)],
             'email' => ['required', 'email:rfc,dns', Rule::unique('contacts')->ignore(optional($this->route('contact'))->id)]
         ];
     }
