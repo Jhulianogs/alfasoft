@@ -10,6 +10,20 @@
 
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ route('index') }}">Alfa Soft</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav d-flex justify-content-center w-100">
+                <li class="nav-item {{ request()->is('/') ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('index') }}">Contacts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     
     @yield('content')
 
@@ -17,5 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     @toastr_js
     @toastr_render
+
+    @yield('script')
 </body>
 </html>

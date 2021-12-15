@@ -45,3 +45,13 @@
         
     </div>
 @endsection
+
+
+@section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7-beta.29/jquery.inputmask.min.js"></script>
+    <script>
+        $(function() {
+            $("input[name=contact]").inputmask("integer", {'rightAlign': false});
+        })
+    </script>
+@endsection
