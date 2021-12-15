@@ -41,6 +41,7 @@ class ContactController extends Controller
         
         Contact::create($request->validated());
 
+        toastr()->success('Contact created', "Success!");
         return redirect()->route('index');
     }
 
@@ -77,7 +78,7 @@ class ContactController extends Controller
     {
         $contact->update($request->validated());
         
-        
+        toastr()->success('Contact updated', "Success!");
         return redirect()->route('index');
     }
 
@@ -90,7 +91,8 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         $contact->delete();
-
+        
+        toastr()->success('Contact deleted', "Success!");
         return redirect()->route('index');
     }
 }
